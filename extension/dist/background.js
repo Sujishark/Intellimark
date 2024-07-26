@@ -1,0 +1,1 @@
+console.log("hi from worker"),chrome.runtime.onMessage.addListener(((e,o,a)=>{const r=e.localStorageData;console.log("Local Storage Data:",r),chrome.runtime.sendMessage({type:"service_worker_message",data:e})}));

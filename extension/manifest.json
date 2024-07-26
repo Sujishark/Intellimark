@@ -1,0 +1,32 @@
+{
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "name": "Intellimark",
+    "description": "Forget about losing bookmarks",
+    "permissions": [
+        "bookmarks",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "action": {
+        "default_popup": "js/index.html",
+        "default_title": "React Chrome Extension"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
